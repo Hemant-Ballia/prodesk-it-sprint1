@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let isScrollLocked = false; 
 
     /* =========================================================
-       1. Custom Scroll Lock Logic
+        Custom Scroll Logic for Hiding Navbar on Scroll Down from Top
     ========================================================= */
     
-    // Desktop Wheel Event
+    
     window.addEventListener('wheel', (e) => {
         const menuCheckbox = document.getElementById('menu-checkbox');
         if (menuCheckbox && menuCheckbox.checked) return;
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, { passive: false }); 
 
-    // Mobile Touch Event
+    
     let touchStartY = 0;
     window.addEventListener('touchstart', (e) => {
         touchStartY = e.touches[0].clientY;
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* =========================================================
-       2. Standard Scroll Logic
+       Standard Scroll Logic
     ========================================================= */
     let lastScrollY = window.scrollY;
 
@@ -76,10 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* =========================================================
-       3. General Controllers (Theme, Menu, Video, Reveal)
+         Controllers 
     ========================================================= */
     
-    // Theme Controller
+    
     const themeToggleBtn = document.getElementById('theme-toggle');
     const body = document.body;
     
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Mobile Menu Link Behavior
+    
     const navLinks = document.querySelectorAll('.menu-items a');
     const menuCheckbox = document.getElementById('menu-checkbox');
 
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Video Play/Pause Control
+    
     const video = document.getElementById('hero-vid');
     const videoBtn = document.getElementById('video-control');
     
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Intersection Observer for Reveal Animation
+    
     const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
